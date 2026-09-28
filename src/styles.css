@@ -79,14 +79,14 @@
 }
 
 :root {
-  --radius: 0.875rem;
+  --radius: 0.375rem;
 
   --font-body: "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.2427 0.1563 270.89);
-  --surface: oklch(0.9807 0.0051 247.88);
+  --surface: oklch(0.975 0.008 247.88);
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2427 0.1563 270.89);
@@ -101,7 +101,7 @@
   --secondary-foreground: oklch(0.2427 0.1563 270.89);
 
   --muted: oklch(0.9807 0.0051 247.88);
-  --muted-foreground: oklch(0.52 0.045 268);
+  --muted-foreground: oklch(0.47 0.038 268);
 
   --accent: oklch(0.8162 0.0608 234.84);
   --accent-foreground: oklch(0.2427 0.1563 270.89);
@@ -133,11 +133,11 @@
   --sidebar-border: oklch(1 0 0 / 12%);
   --sidebar-ring: oklch(0.8162 0.0608 234.84);
 
-  --gradient-hero: linear-gradient(
-    160deg,
-    oklch(0.2427 0.1563 270.89) 0%,
-    oklch(0.2 0.14 272) 55%,
-    oklch(0.3087 0.1838 271.53) 100%
+  --hero-overlay: linear-gradient(
+    90deg,
+    oklch(0.2427 0.1563 270.89 / 0.7) 0%,
+    oklch(0.2427 0.1563 270.89 / 0.92) 48%,
+    oklch(0.2427 0.1563 270.89 / 0.98) 100%
   );
   --gradient-accent-line: linear-gradient(
     90deg,
@@ -176,7 +176,7 @@ html[lang="ar"] {
   h3,
   h4 {
     font-family: var(--font-heading);
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 
   :focus-visible {
@@ -202,7 +202,23 @@ html[lang="ar"] {
 }
 
 @utility hero-surface {
-  background-image: var(--gradient-hero);
+  background-image: var(--hero-overlay);
+}
+
+@utility section-shell {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+}
+
+@utility section-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+html[dir="rtl"] .section-kicker {
+  letter-spacing: 0;
 }
 
 /* Restrained scroll reveal */
