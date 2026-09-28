@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { useMemo, useState, type FormEvent } from "react";
+import { useMemo, useState, type FormEvent, type ReactNode } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,7 +13,6 @@ import {
   GraduationCap,
   Handshake,
   Languages,
-  Mail,
   Menu,
   Phone,
   Scale,
@@ -181,7 +180,7 @@ function PublicWebsite() {
             <SectionHeading title={c.about.heading} index="01" />
             <div>
               <p className="max-w-3xl text-xl leading-9 text-foreground sm:text-2xl">{c.about.body}</p>
-              <div className="mt-12 grid border-y border-border md:grid-cols-2 md:divide-x md:divide-x-reverse md:rtl:divide-x-reverse">
+              <div className="mt-12 grid border-y border-border md:grid-cols-2 md:divide-x">
                 <article className="py-8 md:px-8 md:first:ps-0">
                   <Target className="text-accent" />
                   <h3 className="mt-5 text-2xl font-semibold text-primary">{c.about.visionTitle}</h3>
@@ -380,7 +379,7 @@ function SectionHeading({ title, subtitle, eyebrow, index, inverted, centered }:
   );
 }
 
-function RevealSection({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) {
+function RevealSection({ children, className, id }: { children: ReactNode; className?: string; id?: string }) {
   const { ref, visible } = useReveal<HTMLElement>();
   return <section id={id} ref={ref} className={cn("reveal", visible && "reveal-in", className)}>{children}</section>;
 }
