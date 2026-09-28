@@ -1,0 +1,637 @@
+export type Locale = "ar" | "en";
+
+export const LOCALES: Locale[] = ["ar", "en"];
+
+const ar = {
+  meta: {
+    title: "نادي القانون | جامعة الملك سعود | الشراكات والرعاية",
+    description:
+      "منصة الشراكات والرعاية لنادي القانون بجامعة الملك سعود، للتعاون مع الجهات والشركات ودعم البرامج والمبادرات القانونية.",
+    adminTitle: "لوحة إدارة الطلبات | نادي القانون",
+    adminDescription: "لوحة داخلية لمتابعة طلبات الرعاية والشراكة لنادي القانون بجامعة الملك سعود.",
+    authTitle: "دخول الإدارة | نادي القانون",
+    authDescription: "تسجيل دخول مسؤولي نادي القانون بجامعة الملك سعود لإدارة طلبات الشراكة.",
+  },
+  brand: {
+    name: "نادي القانون",
+    university: "جامعة الملك سعود",
+    slogan: "نصنع قادة... ننشر وعيًا",
+    logoAlt: "شعار نادي القانون بجامعة الملك سعود",
+  },
+  nav: {
+    home: "الرئيسية",
+    about: "من نحن",
+    numbers: "النادي في أرقام",
+    programs: "برامجنا",
+    partners: "شركاء النجاح",
+    benefits: "مزايا الشراكة",
+    sponsorship: "طلب رعاية",
+    contact: "تواصل معنا",
+    cta: "قدّم طلب رعاية",
+    openMenu: "فتح القائمة",
+    closeMenu: "إغلاق القائمة",
+    language: "اللغة",
+  },
+  hero: {
+    eyebrow: "نادي القانون بجامعة الملك سعود",
+    slogan: "نصنع قادة... ننشر وعيًا",
+    heading: "نبني شراكات تصنع أثرًا مستدامًا",
+    paragraph:
+      "نفتح أبواب التعاون أمام الجهات والشركات للمساهمة في تمكين الجيل القانوني القادم وصناعة أثر مهني ومعرفي مستدام.",
+    primaryCta: "كن شريكًا لنا",
+    secondaryCta: "تعرف على النادي",
+  },
+  about: {
+    heading: "من نحن",
+    body: "تأسس نادي القانون بجامعة الملك سعود عام ١٤٢٧هـ / ٢٠٠٦م تحت إشراف عمادة شؤون الطلاب. ويعمل على تمكين طلاب وطالبات القانون أكاديميًا ومهنيًا واجتماعيًا.",
+    visionTitle: "رؤيتنا",
+    visionBody:
+      "نؤمن بأن الاستثمار الحقيقي يكمن في تنمية العقول الشابة وصقل مهاراتهم القانونية ليصبحوا قادة الغد ومهنيي المستقبل.",
+    goalTitle: "هدفنا",
+    goalBody:
+      "نسعى عبر مبادراتنا المتنوعة إلى بناء مجتمع قانوني نابض بالوعي والاحترافية والمسؤولية، بما يتواكب مع تطلعات المملكة ورؤية ٢٠٣٠.",
+  },
+  stats: {
+    heading: "نادي القانون في أرقام",
+    subheading: "أثر ملموس يتراكم عبر السنوات في التأهيل والتدريب والوعي القانوني.",
+    items: [
+      { value: "+170", label: "طالبًا وطالبة في النادي" },
+      { value: "+20", label: "مشروعًا" },
+      { value: "+25", label: "ورشة عمل" },
+      { value: "+24", label: "زيارة إثرائية" },
+      { value: "+2.7M", label: "مشاهدة عبر منصات التواصل الاجتماعي" },
+      { value: "3", label: "جوائز لأفضل نادٍ خلال آخر خمس سنوات" },
+    ],
+  },
+  program: {
+    eyebrow: "برنامجنا الرئيسي",
+    heading: "برنامج «واقعة»",
+    subheading: "من المعرفة القانونية إلى الممارسة",
+    cards: [
+      {
+        title: "فكرة البرنامج",
+        body: "برنامج «واقعة» برنامج تدريبي قانوني قائم على الممارسة والتطبيق العملي، ويتكوّن من سلسلة متكاملة من ورش العمل القانونية المتنوعة في تخصصاتها ومجالاتها.",
+      },
+      {
+        title: "آلية البرنامج",
+        body: "تُطرح واقعة قانونية تُدرس في كل ورشة من منظور تخصصها القانوني والجهة المقدّمة لها. بذلك يتعرّف المشاركون على طرق معالجة الواقعة من زوايا واختصاصات متعددة.",
+      },
+      {
+        title: "هدف البرنامج",
+        body: "ربط المعرفة القانونية بالتطبيق العملي، وتنمية مهارات التحليل القانوني، وفهم إجراءات الجهات ذات العلاقة وأدوارها، من خلال تجربة تحاكي التعامل مع الوقائع القانونية في الواقع العملي.",
+      },
+    ],
+  },
+  partners: {
+    heading: "شركاء النجاح",
+    subheading: "نفخر بشراكات ساهمت في دعم مسيرة النادي وصناعة أثر حقيقي.",
+    placeholder: "شعار شريك",
+  },
+  benefits: {
+    heading: "ماذا يقدّم النادي للشركاء؟",
+    subheading: "قيمة واضحة لجهتك عند الشراكة مع نادي القانون.",
+    cards: [
+      {
+        title: "الظهور الإعلامي",
+        body: "الإعلان عن التعاون عبر حسابات النادي في وسائل التواصل الاجتماعي.",
+      },
+      {
+        title: "الوصول إلى المواهب القانونية",
+        body: "ترشيح الطلاب والطالبات المناسبين للبرامج التدريبية وإتاحة الوصول إلى المواهب القانونية المؤهلة.",
+      },
+      {
+        title: "بناء شراكات مستدامة",
+        body: "خلق فرص تعاون بين الجهة ونادي القانون واستقطاب الكفاءات للتدريب والتوظيف مستقبلًا.",
+      },
+    ],
+  },
+  steps: {
+    heading: "كيف تشارك جهتك؟",
+    subheading: "ثلاث خطوات واضحة من التواصل إلى تنفيذ التجربة التدريبية.",
+    items: [
+      {
+        title: "تقديم البرنامج",
+        body: "تقديم برنامج تدريبي يناسب طبيعة عمل الجهة ومتطلباتها.",
+      },
+      {
+        title: "تحديد المقاعد",
+        body: "تحديد عدد المقاعد المتاحة وشروط ترشيح المتدربين.",
+      },
+      {
+        title: "تطوير التجربة",
+        body: "تقديم تجربة تدريبية عملية وشهادة للمشاركين عند إتمام البرنامج.",
+      },
+    ],
+  },
+  cta: {
+    heading: "لنصنع أثرًا معًا",
+    body: "إذا كانت جهتك تؤمن بتمكين المواهب القانونية وصناعة أثر معرفي ومهني مستدام، يسعدنا أن تكون جزءًا من شركاء نادي القانون.",
+    button: "تقديم طلب شراكة",
+  },
+  form: {
+    heading: "ابدأ الشراكة",
+    description: "أرسل بيانات جهتك، وسيتواصل معك فريق نادي القانون لمناقشة تفاصيل الشراكة.",
+    required: "مطلوب",
+    optional: "اختياري",
+    submit: "إرسال طلب الشراكة",
+    submitting: "جارٍ الإرسال...",
+    selectPlaceholder: "اختر من القائمة",
+    fields: {
+      fullName: { label: "الاسم الكامل", placeholder: "اكتب اسمك الكامل" },
+      company: { label: "الجهة / الشركة", placeholder: "اسم الجهة أو الشركة" },
+      jobTitle: { label: "المسمى الوظيفي", placeholder: "مثال: مدير الشراكات" },
+      phone: { label: "رقم التواصل", placeholder: "05XXXXXXXX" },
+      email: { label: "البريد الإلكتروني", placeholder: "name@company.com" },
+      website: { label: "موقع الجهة", placeholder: "https://company.com" },
+      partnershipType: { label: "نوع الشراكة", placeholder: "اختر نوع الشراكة" },
+      programInterest: { label: "البرنامج أو المبادرة المهتمون بدعمها", placeholder: "اختر البرنامج" },
+      budget: { label: "الميزانية التقديرية", placeholder: "اختر النطاق التقديري" },
+      message: {
+        label: "تفاصيل إضافية",
+        placeholder: "أخبرنا أكثر عن نوع الشراكة أو الدعم الذي تود جهتك تقديمه...",
+      },
+      consent: {
+        label: "أوافق على استخدام البيانات المقدمة للتواصل بخصوص طلب الشراكة.",
+      },
+    },
+    errors: {
+      fullName: "يرجى كتابة الاسم الكامل.",
+      company: "يرجى كتابة اسم الجهة أو الشركة.",
+      jobTitle: "يرجى كتابة المسمى الوظيفي.",
+      phone: "يرجى إدخال رقم جوال سعودي صحيح يبدأ بـ 05.",
+      email: "يرجى إدخال بريد إلكتروني صحيح.",
+      website: "يرجى إدخال رابط صحيح يبدأ بـ http أو https.",
+      partnershipType: "يرجى اختيار نوع الشراكة.",
+      consent: "يرجى الموافقة على استخدام البيانات للتواصل.",
+      submit: "تعذر إرسال الطلب حاليًا. يرجى المحاولة مرة أخرى.",
+      summary: "يرجى تصحيح الحقول التالية قبل الإرسال.",
+    },
+    success: {
+      heading: "تم استلام طلبك بنجاح",
+      body: "شكرًا لاهتمامكم بالشراكة مع نادي القانون. سيتواصل معكم الفريق بعد مراجعة الطلب.",
+      referenceLabel: "رقم الطلب",
+      note: "يرجى الاحتفاظ برقم الطلب للرجوع إليه في المراسلات.",
+      again: "إرسال طلب آخر",
+    },
+    partnershipTypes: {
+      financial: "رعاية مالية",
+      knowledge: "رعاية معرفية",
+      training: "برنامج تدريبي",
+      workshop: "ورشة عمل",
+      strategic: "شراكة استراتيجية",
+      logistics: "دعم لوجستي",
+      other: "أخرى",
+    },
+    programs: {
+      waqeah: "برنامج واقعة",
+      clubPrograms: "برامج نادي القانون",
+      general: "شراكة عامة مع النادي",
+      other: "أخرى",
+    },
+    budgets: {
+      under5k: "أقل من 5,000 ريال",
+      "5to10k": "5,000 – 10,000 ريال",
+      "10to25k": "10,000 – 25,000 ريال",
+      "25to50k": "25,000 – 50,000 ريال",
+      over50k: "أكثر من 50,000 ريال",
+      discuss: "أفضل مناقشتها مع الفريق",
+    },
+  },
+  contact: {
+    heading: "تواصل معنا",
+    subheading: "فريق لجنة التأهيل والتطوير جاهز للإجابة على استفسارات الشراكة.",
+    emailLabel: "البريد الإلكتروني",
+    callLabel: "اتصال",
+    people: [
+      { role: "قائد لجنة التأهيل والتطوير", name: "عبدالله الخريف", phone: "+966 54 888 2223" },
+      { role: "نائب لجنة التأهيل والتطوير", name: "عبدالله الرابح", phone: "+966 55 003 2090" },
+      { role: "نائبة لجنة التأهيل والتطوير", name: "المها الكاملي", phone: "+966 55 826 4091" },
+    ],
+  },
+  footer: {
+    navHeading: "روابط سريعة",
+    contactHeading: "للتواصل",
+    socialHeading: "حسابات النادي",
+    socialPlaceholder: "قريبًا",
+    copyright: "© 2026 نادي القانون بجامعة الملك سعود",
+    adminLink: "دخول الإدارة",
+  },
+  admin: {
+    title: "طلبات الرعاية والشراكة",
+    subtitle: "متابعة وإدارة طلبات الشراكة الواردة.",
+    signOut: "تسجيل الخروج",
+    refresh: "تحديث",
+    loading: "جارٍ تحميل الطلبات...",
+    empty: "لا توجد طلبات حتى الآن.",
+    noAccessTitle: "لا تملك صلاحية الوصول",
+    noAccessBody: "هذا الحساب غير مصرّح له بعرض طلبات الشراكة. تواصل مع مسؤول النادي لمنح الصلاحية.",
+    searchPlaceholder: "بحث برقم الطلب أو الجهة أو البريد",
+    filterAll: "كل الحالات",
+    updateStatus: "تحديث الحالة",
+    statusUpdated: "تم تحديث حالة الطلب.",
+    statusFailed: "تعذر تحديث حالة الطلب.",
+    detailsTitle: "تفاصيل الطلب",
+    close: "إغلاق",
+    summary: {
+      total: "إجمالي الطلبات",
+      new: "الطلبات الجديدة",
+      under_review: "قيد المراجعة",
+      contacted: "تم التواصل",
+      accepted: "مقبول",
+      rejected: "مرفوض",
+    },
+    columns: {
+      reference: "رقم الطلب",
+      company: "الجهة",
+      contact: "اسم المسؤول",
+      type: "نوع الشراكة",
+      phone: "رقم التواصل",
+      email: "البريد الإلكتروني",
+      status: "الحالة",
+      date: "تاريخ الطلب",
+    },
+    details: {
+      reference: "رقم الطلب",
+      company: "الجهة",
+      contact: "اسم المسؤول",
+      jobTitle: "المسمى الوظيفي",
+      phone: "رقم التواصل",
+      email: "البريد الإلكتروني",
+      website: "الموقع الإلكتروني",
+      type: "نوع الشراكة",
+      program: "البرنامج المهتم بدعمه",
+      budget: "الميزانية التقديرية",
+      message: "تفاصيل إضافية",
+      status: "الحالة",
+      date: "تاريخ الطلب",
+      none: "غير محدد",
+    },
+    statuses: {
+      new: "جديد",
+      under_review: "قيد المراجعة",
+      contacted: "تم التواصل",
+      accepted: "مقبول",
+      rejected: "مرفوض",
+    },
+  },
+  auth: {
+    title: "دخول مسؤولي النادي",
+    subtitle: "هذه الصفحة مخصصة لفريق نادي القانون لإدارة طلبات الشراكة.",
+    email: "البريد الإلكتروني",
+    password: "كلمة المرور",
+    signIn: "تسجيل الدخول",
+    signUp: "إنشاء حساب",
+    toSignUp: "ليس لديك حساب؟ إنشاء حساب",
+    toSignIn: "لديك حساب؟ تسجيل الدخول",
+    google: "الدخول بحساب Google",
+    working: "جارٍ المعالجة...",
+    checkEmail: "تم إرسال رابط التأكيد إلى بريدك الإلكتروني.",
+    backHome: "العودة إلى الموقع",
+  },
+  common: {
+    switchTo: "English",
+    skipToContent: "تجاوز إلى المحتوى",
+  },
+} as const;
+
+const en: typeof ar = {
+  meta: {
+    title: "Law Club | King Saud University | Partnerships & Sponsorships",
+    description:
+      "Official partnership and sponsorship platform for the Law Club at King Saud University, connecting organizations with legal education, training initiatives and talent.",
+    adminTitle: "Requests Dashboard | Law Club",
+    adminDescription:
+      "Internal dashboard for managing sponsorship and partnership requests for the Law Club at King Saud University.",
+    authTitle: "Admin Sign In | Law Club",
+    authDescription: "Sign in for Law Club administrators to manage partnership requests.",
+  },
+  brand: {
+    name: "Law Club",
+    university: "King Saud University",
+    slogan: "Shaping Leaders... Spreading Awareness",
+    logoAlt: "Law Club at King Saud University logo",
+  },
+  nav: {
+    home: "Home",
+    about: "About Us",
+    numbers: "Law Club in Numbers",
+    programs: "Programs",
+    partners: "Success Partners",
+    benefits: "Partnership Benefits",
+    sponsorship: "Sponsorship Request",
+    contact: "Contact Us",
+    cta: "Submit Sponsorship Request",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    language: "Language",
+  },
+  hero: {
+    eyebrow: "Law Club at King Saud University",
+    slogan: "Shaping Leaders... Spreading Awareness",
+    heading: "Building Partnerships That Create Lasting Impact",
+    paragraph:
+      "We open opportunities for organizations and companies to contribute to empowering the next generation of legal talent and creating lasting professional and educational impact.",
+    primaryCta: "Partner With Us",
+    secondaryCta: "Discover the Club",
+  },
+  about: {
+    heading: "About Us",
+    body: "The Law Club at King Saud University was established in 1427 AH / 2006 under the supervision of the Deanship of Student Affairs. The club works to empower law students academically, professionally, and socially.",
+    visionTitle: "Our Vision",
+    visionBody:
+      "We believe that true investment lies in developing young minds and strengthening their legal skills to become the leaders and professionals of tomorrow.",
+    goalTitle: "Our Goal",
+    goalBody:
+      "Through our diverse initiatives, we aim to build a legal community driven by awareness, professionalism, and responsibility, in alignment with the Kingdom's aspirations and Saudi Vision 2030.",
+  },
+  stats: {
+    heading: "Law Club in Numbers",
+    subheading: "Measurable impact built year after year in training, enablement and legal awareness.",
+    items: [
+      { value: "+170", label: "Club Members" },
+      { value: "+20", label: "Projects" },
+      { value: "+25", label: "Workshops" },
+      { value: "+24", label: "Enrichment Visits" },
+      { value: "+2.7M", label: "Social Media Views" },
+      { value: "3", label: "Best Club Awards in the Past Five Years" },
+    ],
+  },
+  program: {
+    eyebrow: "Our flagship program",
+    heading: "Waqeah Program",
+    subheading: "From Legal Knowledge to Practice",
+    cards: [
+      {
+        title: "Program Concept",
+        body: "Waqeah is a practical legal training program built around hands-on learning. It consists of an integrated series of legal workshops covering different legal fields and specializations.",
+      },
+      {
+        title: "How It Works",
+        body: "A legal case is introduced and examined in each workshop from the perspective of the relevant legal specialization and participating organization. This allows participants to understand how one legal situation can be approached from multiple professional perspectives.",
+      },
+      {
+        title: "Program Objective",
+        body: "The program aims to connect legal knowledge with practical application, strengthen legal analysis skills, and provide participants with a clearer understanding of the procedures and roles of relevant organizations through a realistic legal experience.",
+      },
+    ],
+  },
+  partners: {
+    heading: "Success Partners",
+    subheading:
+      "We are proud of partnerships that have supported the club's journey and contributed to creating meaningful impact.",
+    placeholder: "Partner logo",
+  },
+  benefits: {
+    heading: "What Do We Offer Our Partners?",
+    subheading: "Clear value for your organization when partnering with the Law Club.",
+    cards: [
+      {
+        title: "Media Exposure",
+        body: "Promoting the partnership through the Law Club's official social media platforms.",
+      },
+      {
+        title: "Access to Legal Talent",
+        body: "Connecting organizations with qualified law students and candidates suitable for training and professional opportunities.",
+      },
+      {
+        title: "Building Sustainable Partnerships",
+        body: "Creating long-term opportunities for collaboration, talent development, training, and future recruitment.",
+      },
+    ],
+  },
+  steps: {
+    heading: "How Can Your Organization Participate?",
+    subheading: "Three clear steps from first contact to delivering the training experience.",
+    items: [
+      {
+        title: "Propose a Program",
+        body: "Provide a training program aligned with the organization's field of work and professional requirements.",
+      },
+      {
+        title: "Define Available Seats",
+        body: "Specify the number of available seats and the eligibility or nomination criteria for participants.",
+      },
+      {
+        title: "Deliver the Experience",
+        body: "Provide participants with a practical training experience and a certificate upon successful completion.",
+      },
+    ],
+  },
+  cta: {
+    heading: "Let's Create Impact Together",
+    body: "If your organization believes in empowering legal talent and creating lasting professional and educational impact, we would be pleased to welcome you as a partner of the Law Club.",
+    button: "Submit Partnership Request",
+  },
+  form: {
+    heading: "Start a Partnership",
+    description:
+      "Submit your organization's details and the Law Club team will contact you to discuss the partnership opportunity.",
+    required: "Required",
+    optional: "Optional",
+    submit: "Submit Partnership Request",
+    submitting: "Submitting...",
+    selectPlaceholder: "Select an option",
+    fields: {
+      fullName: { label: "Full Name", placeholder: "Enter your full name" },
+      company: { label: "Organization / Company", placeholder: "Organization or company name" },
+      jobTitle: { label: "Job Title", placeholder: "Example: Partnerships Manager" },
+      phone: { label: "Phone Number", placeholder: "05XXXXXXXX" },
+      email: { label: "Email Address", placeholder: "name@company.com" },
+      website: { label: "Organization Website", placeholder: "https://company.com" },
+      partnershipType: { label: "Partnership Type", placeholder: "Select partnership type" },
+      programInterest: { label: "Program or Initiative of Interest", placeholder: "Select a program" },
+      budget: { label: "Estimated Budget", placeholder: "Select an estimated range" },
+      message: {
+        label: "Additional Details",
+        placeholder:
+          "Tell us more about the type of partnership or support your organization would like to provide...",
+      },
+      consent: {
+        label:
+          "I agree to the use of the submitted information for communication regarding this partnership request.",
+      },
+    },
+    errors: {
+      fullName: "Please enter your full name.",
+      company: "Please enter your organization or company name.",
+      jobTitle: "Please enter your job title.",
+      phone: "Please enter a valid Saudi mobile number starting with 05.",
+      email: "Please enter a valid email address.",
+      website: "Please enter a valid URL starting with http or https.",
+      partnershipType: "Please select a partnership type.",
+      consent: "Please agree to the use of your information for communication.",
+      submit: "We couldn't submit your request right now. Please try again.",
+      summary: "Please correct the following fields before submitting.",
+    },
+    success: {
+      heading: "Your Request Has Been Received",
+      body: "Thank you for your interest in partnering with the Law Club. Our team will contact you after reviewing your request.",
+      referenceLabel: "Request Reference",
+      note: "Please keep this reference number for future correspondence.",
+      again: "Submit another request",
+    },
+    partnershipTypes: {
+      financial: "Financial Sponsorship",
+      knowledge: "Knowledge Partnership",
+      training: "Training Program",
+      workshop: "Workshop",
+      strategic: "Strategic Partnership",
+      logistics: "Logistical Support",
+      other: "Other",
+    },
+    programs: {
+      waqeah: "Waqeah Program",
+      clubPrograms: "Law Club Programs",
+      general: "General Partnership with the Club",
+      other: "Other",
+    },
+    budgets: {
+      under5k: "Less than SAR 5,000",
+      "5to10k": "SAR 5,000 – 10,000",
+      "10to25k": "SAR 10,000 – 25,000",
+      "25to50k": "SAR 25,000 – 50,000",
+      over50k: "More than SAR 50,000",
+      discuss: "Prefer to Discuss With the Team",
+    },
+  },
+  contact: {
+    heading: "Contact Us",
+    subheading: "The Training & Development Committee is ready to answer partnership enquiries.",
+    emailLabel: "Email",
+    callLabel: "Call",
+    people: [
+      {
+        role: "Head of Training & Development Committee",
+        name: "عبدالله الخريف",
+        phone: "+966 54 888 2223",
+      },
+      {
+        role: "Deputy Head of Training & Development Committee",
+        name: "عبدالله الرابح",
+        phone: "+966 55 003 2090",
+      },
+      {
+        role: "Deputy Head of Training & Development Committee",
+        name: "المها الكاملي",
+        phone: "+966 55 826 4091",
+      },
+    ],
+  },
+  footer: {
+    navHeading: "Quick Links",
+    contactHeading: "Get in Touch",
+    socialHeading: "Follow the Club",
+    socialPlaceholder: "Coming soon",
+    copyright: "© 2026 Law Club at King Saud University",
+    adminLink: "Admin sign in",
+  },
+  admin: {
+    title: "Sponsorship & Partnership Requests",
+    subtitle: "Track and manage incoming partnership requests.",
+    signOut: "Sign out",
+    refresh: "Refresh",
+    loading: "Loading requests...",
+    empty: "No requests yet.",
+    noAccessTitle: "You don't have access",
+    noAccessBody:
+      "This account is not authorized to view partnership requests. Contact a club administrator to be granted access.",
+    searchPlaceholder: "Search by reference, organization or email",
+    filterAll: "All statuses",
+    updateStatus: "Update status",
+    statusUpdated: "Request status updated.",
+    statusFailed: "Could not update the request status.",
+    detailsTitle: "Request details",
+    close: "Close",
+    summary: {
+      total: "Total Requests",
+      new: "New Requests",
+      under_review: "Under Review",
+      contacted: "Contacted",
+      accepted: "Accepted",
+      rejected: "Rejected",
+    },
+    columns: {
+      reference: "Request ID",
+      company: "Organization",
+      contact: "Contact Person",
+      type: "Partnership Type",
+      phone: "Phone",
+      email: "Email",
+      status: "Status",
+      date: "Submission Date",
+    },
+    details: {
+      reference: "Reference number",
+      company: "Organization",
+      contact: "Contact person",
+      jobTitle: "Job title",
+      phone: "Phone",
+      email: "Email",
+      website: "Website",
+      type: "Partnership type",
+      program: "Program interest",
+      budget: "Estimated budget",
+      message: "Message",
+      status: "Status",
+      date: "Submission date",
+      none: "Not provided",
+    },
+    statuses: {
+      new: "New",
+      under_review: "Under Review",
+      contacted: "Contacted",
+      accepted: "Accepted",
+      rejected: "Rejected",
+    },
+  },
+  auth: {
+    title: "Law Club Admin Sign In",
+    subtitle: "This area is reserved for the Law Club team managing partnership requests.",
+    email: "Email address",
+    password: "Password",
+    signIn: "Sign in",
+    signUp: "Create account",
+    toSignUp: "No account yet? Create one",
+    toSignIn: "Already have an account? Sign in",
+    google: "Continue with Google",
+    working: "Working...",
+    checkEmail: "A confirmation link has been sent to your email.",
+    backHome: "Back to website",
+  },
+  common: {
+    switchTo: "العربية",
+    skipToContent: "Skip to content",
+  },
+};
+
+export const translations = { ar, en } as const;
+export type Content = typeof ar;
+
+export const PARTNERSHIP_TYPE_KEYS = [
+  "financial",
+  "knowledge",
+  "training",
+  "workshop",
+  "strategic",
+  "logistics",
+  "other",
+] as const;
+
+export const PROGRAM_KEYS = ["waqeah", "clubPrograms", "general", "other"] as const;
+
+export const BUDGET_KEYS = [
+  "under5k",
+  "5to10k",
+  "10to25k",
+  "25to50k",
+  "over50k",
+  "discuss",
+] as const;
+
+export const STATUS_KEYS = [
+  "new",
+  "under_review",
+  "contacted",
+  "accepted",
+  "rejected",
+] as const;
