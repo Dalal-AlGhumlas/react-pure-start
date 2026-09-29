@@ -144,7 +144,10 @@ const ar = {
       email: { label: "البريد الإلكتروني", placeholder: "name@company.com" },
       website: { label: "موقع الجهة", placeholder: "https://company.com" },
       partnershipType: { label: "نوع الشراكة", placeholder: "اختر نوع الشراكة" },
-      programInterest: { label: "البرنامج أو المبادرة المهتمون بدعمها", placeholder: "اختر البرنامج" },
+      programInterest: {
+        label: "البرنامج أو المبادرة المهتمون بدعمها",
+        placeholder: "اختر البرنامج",
+      },
       budget: { label: "الميزانية التقديرية", placeholder: "اختر النطاق التقديري" },
       message: {
         label: "تفاصيل إضافية",
@@ -155,16 +158,20 @@ const ar = {
       },
     },
     errors: {
-      fullName: "يرجى كتابة الاسم الكامل.",
+      fullName: "يرجى كتابة الاسم الأول واسم العائلة (حتى 120 حرفًا).",
       company: "يرجى كتابة اسم الجهة أو الشركة.",
       jobTitle: "يرجى كتابة المسمى الوظيفي.",
-      phone: "يرجى إدخال رقم جوال سعودي صحيح يبدأ بـ 05.",
+      phone: "يرجى إدخال رقم جوال سعودي صحيح يبدأ بـ 05 أو +9665.",
       email: "يرجى إدخال بريد إلكتروني صحيح.",
       website: "يرجى إدخال رابط صحيح يبدأ بـ http أو https.",
       partnershipType: "يرجى اختيار نوع الشراكة.",
       consent: "يرجى الموافقة على استخدام البيانات للتواصل.",
       submit: "تعذر إرسال الطلب حاليًا. يرجى المحاولة مرة أخرى.",
       summary: "يرجى تصحيح الحقول التالية قبل الإرسال.",
+      programInterest: "يرجى اختيار برنامج من القائمة.",
+      estimatedBudget: "يرجى اختيار ميزانية من القائمة.",
+      message: "يجب ألا تتجاوز التفاصيل 4000 حرف.",
+      unavailable: "خدمة إرسال الطلبات غير متاحة مؤقتًا. يرجى التواصل مع النادي عبر الأرقام أدناه.",
     },
     success: {
       heading: "تم استلام طلبك بنجاح",
@@ -215,6 +222,7 @@ const ar = {
     socialPlaceholder: "قريبًا",
     copyright: "© 2026 نادي القانون بجامعة الملك سعود",
     adminLink: "دخول الإدارة",
+    official: "الموقع الرسمي للشراكات والرعاية",
   },
   admin: {
     title: "طلبات الرعاية والشراكة",
@@ -224,7 +232,8 @@ const ar = {
     loading: "جارٍ تحميل الطلبات...",
     empty: "لا توجد طلبات حتى الآن.",
     noAccessTitle: "لا تملك صلاحية الوصول",
-    noAccessBody: "هذا الحساب غير مصرّح له بعرض طلبات الشراكة. تواصل مع مسؤول النادي لمنح الصلاحية.",
+    noAccessBody:
+      "هذا الحساب غير مصرّح له بعرض طلبات الشراكة. تواصل مع مسؤول النادي لمنح الصلاحية.",
     searchPlaceholder: "بحث برقم الطلب أو الجهة أو البريد",
     filterAll: "كل الحالات",
     updateStatus: "تحديث الحالة",
@@ -232,6 +241,13 @@ const ar = {
     statusFailed: "تعذر تحديث حالة الطلب.",
     detailsTitle: "تفاصيل الطلب",
     close: "إغلاق",
+    loadFailed: "تعذر تحميل الطلبات. يرجى المحاولة مرة أخرى.",
+    previous: "السابق",
+    next: "التالي",
+    page: "صفحة",
+    search: "بحث",
+    view: "عرض التفاصيل",
+    conflict: "تغيّرت حالة الطلب. حدّث القائمة ثم حاول مجددًا.",
     summary: {
       total: "إجمالي الطلبات",
       new: "الطلبات الجديدة",
@@ -287,12 +303,21 @@ const ar = {
     working: "جارٍ المعالجة...",
     checkEmail: "تم إرسال رابط التأكيد إلى بريدك الإلكتروني.",
     backHome: "العودة إلى الموقع",
+    failed: "تعذر تسجيل الدخول. تحقق من البريد وكلمة المرور وحاول مجددًا.",
+    required: "أدخل بريدًا إلكترونيًا صحيحًا وكلمة المرور.",
+    unavailable: "تسجيل الدخول غير متاح مؤقتًا. يرجى التواصل مع مسؤول الموقع.",
   },
   common: {
     switchTo: "English",
     skipToContent: "تجاوز إلى المحتوى",
+    notFound: "الصفحة غير موجودة",
+    notFoundBody: "الصفحة المطلوبة غير موجودة أو تم نقلها.",
+    home: "العودة للرئيسية",
+    errorTitle: "تعذر تحميل الصفحة",
+    errorBody: "حدث خطأ. يمكنك المحاولة مرة أخرى أو العودة للرئيسية.",
+    retry: "حاول مجددًا",
   },
-} as const;
+};
 
 const en: typeof ar = {
   meta: {
@@ -346,7 +371,8 @@ const en: typeof ar = {
   },
   stats: {
     heading: "Law Club in Numbers",
-    subheading: "Measurable impact built year after year in training, enablement and legal awareness.",
+    subheading:
+      "Measurable impact built year after year in training, enablement and legal awareness.",
     items: [
       { value: "+170", label: "Club Members" },
       { value: "+20", label: "Projects" },
@@ -439,7 +465,10 @@ const en: typeof ar = {
       email: { label: "Email Address", placeholder: "name@company.com" },
       website: { label: "Organization Website", placeholder: "https://company.com" },
       partnershipType: { label: "Partnership Type", placeholder: "Select partnership type" },
-      programInterest: { label: "Program or Initiative of Interest", placeholder: "Select a program" },
+      programInterest: {
+        label: "Program or Initiative of Interest",
+        placeholder: "Select a program",
+      },
       budget: { label: "Estimated Budget", placeholder: "Select an estimated range" },
       message: {
         label: "Additional Details",
@@ -452,16 +481,21 @@ const en: typeof ar = {
       },
     },
     errors: {
-      fullName: "Please enter your full name.",
+      fullName: "Enter your first and last name (up to 120 characters).",
       company: "Please enter your organization or company name.",
       jobTitle: "Please enter your job title.",
-      phone: "Please enter a valid Saudi mobile number starting with 05.",
+      phone: "Please enter a valid Saudi mobile number starting with 05 or +9665.",
       email: "Please enter a valid email address.",
       website: "Please enter a valid URL starting with http or https.",
       partnershipType: "Please select a partnership type.",
       consent: "Please agree to the use of your information for communication.",
       submit: "We couldn't submit your request right now. Please try again.",
       summary: "Please correct the following fields before submitting.",
+      programInterest: "Please select a program from the list.",
+      estimatedBudget: "Please select a budget from the list.",
+      message: "Additional details must not exceed 4,000 characters.",
+      unavailable:
+        "Request submission is temporarily unavailable. Please contact the club using the numbers below.",
     },
     success: {
       heading: "Your Request Has Been Received",
@@ -502,17 +536,17 @@ const en: typeof ar = {
     people: [
       {
         role: "Head of Training & Development Committee",
-        name: "عبدالله الخريف",
+        name: "Abdullah Alkhuraif",
         phone: "+966 54 888 2223",
       },
       {
         role: "Deputy Head of Training & Development Committee",
-        name: "عبدالله الرابح",
+        name: "Abdullah Alrabeh",
         phone: "+966 55 003 2090",
       },
       {
         role: "Deputy Head of Training & Development Committee",
-        name: "المها الكاملي",
+        name: "Almaha Alkamli",
         phone: "+966 55 826 4091",
       },
     ],
@@ -524,6 +558,7 @@ const en: typeof ar = {
     socialPlaceholder: "Coming soon",
     copyright: "© 2026 Law Club at King Saud University",
     adminLink: "Admin sign in",
+    official: "Official partnerships and sponsorships website",
   },
   admin: {
     title: "Sponsorship & Partnership Requests",
@@ -542,6 +577,13 @@ const en: typeof ar = {
     statusFailed: "Could not update the request status.",
     detailsTitle: "Request details",
     close: "Close",
+    loadFailed: "Could not load requests. Please try again.",
+    previous: "Previous",
+    next: "Next",
+    page: "Page",
+    search: "Search",
+    view: "View details",
+    conflict: "The request status changed. Refresh the list and try again.",
     summary: {
       total: "Total Requests",
       new: "New Requests",
@@ -597,10 +639,19 @@ const en: typeof ar = {
     working: "Working...",
     checkEmail: "A confirmation link has been sent to your email.",
     backHome: "Back to website",
+    failed: "Sign in failed. Check your email and password and try again.",
+    required: "Enter a valid email address and your password.",
+    unavailable: "Sign in is temporarily unavailable. Please contact the site administrator.",
   },
   common: {
     switchTo: "العربية",
     skipToContent: "Skip to content",
+    notFound: "Page not found",
+    notFoundBody: "The page you requested does not exist or has been moved.",
+    home: "Go home",
+    errorTitle: "This page did not load",
+    errorBody: "Something went wrong. Try again or return to the home page.",
+    retry: "Try again",
   },
 };
 
@@ -628,10 +679,4 @@ export const BUDGET_KEYS = [
   "discuss",
 ] as const;
 
-export const STATUS_KEYS = [
-  "new",
-  "under_review",
-  "contacted",
-  "accepted",
-  "rejected",
-] as const;
+export const STATUS_KEYS = ["new", "under_review", "contacted", "accepted", "rejected"] as const;

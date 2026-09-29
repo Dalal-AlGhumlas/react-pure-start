@@ -1,14 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
-import { useMemo, useState, type FormEvent, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import {
   ArrowLeft,
   ArrowRight,
   Award,
   BriefcaseBusiness,
   Building2,
-  Check,
-  ChevronDown,
   Eye,
   GraduationCap,
   Handshake,
@@ -23,21 +20,9 @@ import {
 
 import heroPattern from "@/assets/hero-pattern.jpg";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { useReveal } from "@/hooks/use-reveal";
 import { useI18n } from "@/i18n/LanguageProvider";
-import {
-  BUDGET_KEYS,
-  PARTNERSHIP_TYPE_KEYS,
-  PROGRAM_KEYS,
-} from "@/i18n/translations";
-import {
-  submitSponsorshipRequest,
-  type SponsorshipSubmission,
-} from "@/lib/sponsorship.functions";
+import { SponsorshipForm } from "@/components/SponsorshipForm";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
@@ -382,105 +367,4 @@ function SectionHeading({ title, subtitle, eyebrow, index, inverted, centered }:
 function RevealSection({ children, className, id }: { children: ReactNode; className?: string; id?: string }) {
   const { ref, visible } = useReveal<HTMLElement>();
   return <section id={id} ref={ref} className={cn("reveal", visible && "reveal-in", className)}>{children}</section>;
-}
-
-function SponsorshipForm() {
-  const { c } = useI18n();
-  const submit = useServerFn(submitSponsorshipRequest);
-  const [consent, setConsent] = useState(false);
-  const [status, setStatus] = useState<{ kind: "idle" | "loading" | "success" | "error"; reference?: string }>({ kind: "idle" });
-  const optionGroups = useMemo(() => ({
-    partnershipType: PARTNERSHIP_TYPE_KEYS.map((key) => ({ key, label: c.form.partnershipTypes[key] })),
-    programInterest: PROGRAM_KEYS.map((key) => ({ key, label: c.form.programs[key] })),
-    estimatedBudget: BUDGET_KEYS.map((key) => ({ key, label: c.form.budgets[key] })),
-  }), [c]);
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (!consent) return setStatus({ kind: "error" });
-    const data = new FormData(event.currentTarget);
-    const payload: SponsorshipSubmission = {
-      fullName: String(data.get("fullName") ?? ""),
-      companyName: String(data.get("companyName") ?? ""),
-      jobTitle: String(data.get("jobTitle") ?? ""),
-      phone: String(data.get("phone") ?? ""),
-      email: String(data.get("email") ?? ""),
-      website: String(data.get("website") ?? ""),
-      partnershipType: String(data.get("partnershipType") ?? ""),
-      programInterest: String(data.get("programInterest") ?? ""),
-      estimatedBudget: String(data.get("estimatedBudget") ?? ""),
-      message: String(data.get("message") ?? ""),
-      consent: true,
-    };
-    setStatus({ kind: "loading" });
-    try {
-      const result = await submit({ data: payload });
-      setStatus({ kind: "success", reference: result.referenceNumber });
-      event.currentTarget.reset();
-      setConsent(false);
-    } catch {
-      setStatus({ kind: "error" });
-    }
-  }
-
-  if (status.kind === "success") {
-    return (
-      <div className="border border-border bg-background p-8 sm:p-12" role="status">
-        <div className="grid size-12 place-items-center bg-primary text-primary-foreground"><Check /></div>
-        <h3 className="mt-8 text-3xl font-semibold text-primary">{c.form.success.heading}</h3>
-        <p className="mt-4 leading-7 text-muted-foreground">{c.form.success.body}</p>
-        <div className="mt-8 border-y border-border py-5">
-          <span className="text-sm text-muted-foreground">{c.form.success.referenceLabel}</span>
-          <strong className="ltr-inline mt-1 block text-xl text-primary">{status.reference}</strong>
-        </div>
-        <p className="mt-5 text-sm text-muted-foreground">{c.form.success.note}</p>
-        <Button className="mt-8" onClick={() => setStatus({ kind: "idle" })}>{c.form.success.again}</Button>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="grid gap-6 border border-border bg-background p-6 sm:grid-cols-2 sm:p-10" noValidate>
-      <FormField name="fullName" label={c.form.fields.fullName.label} placeholder={c.form.fields.fullName.placeholder} required />
-      <FormField name="companyName" label={c.form.fields.company.label} placeholder={c.form.fields.company.placeholder} required />
-      <FormField name="jobTitle" label={c.form.fields.jobTitle.label} placeholder={c.form.fields.jobTitle.placeholder} required />
-      <FormField name="phone" label={c.form.fields.phone.label} placeholder={c.form.fields.phone.placeholder} type="tel" dir="ltr" required />
-      <FormField name="email" label={c.form.fields.email.label} placeholder={c.form.fields.email.placeholder} type="email" dir="ltr" required />
-      <FormField name="website" label={c.form.fields.website.label} placeholder={c.form.fields.website.placeholder} type="url" dir="ltr" />
-      <SelectField name="partnershipType" label={c.form.fields.partnershipType.label} placeholder={c.form.fields.partnershipType.placeholder} options={optionGroups.partnershipType} required />
-      <SelectField name="programInterest" label={c.form.fields.programInterest.label} placeholder={c.form.fields.programInterest.placeholder} options={optionGroups.programInterest} />
-      <SelectField name="estimatedBudget" label={c.form.fields.budget.label} placeholder={c.form.fields.budget.placeholder} options={optionGroups.estimatedBudget} />
-      <div className="grid gap-2 sm:col-span-2">
-        <Label htmlFor="message">{c.form.fields.message.label}</Label>
-        <Textarea id="message" name="message" placeholder={c.form.fields.message.placeholder} className="min-h-32 resize-y" />
-      </div>
-      <div className="flex items-start gap-3 sm:col-span-2">
-        <Checkbox id="consent" checked={consent} onCheckedChange={(value) => setConsent(value === true)} className="mt-0.5" />
-        <Label htmlFor="consent" className="text-sm font-normal leading-6 text-muted-foreground">{c.form.fields.consent.label}</Label>
-      </div>
-      {status.kind === "error" && <p className="text-sm text-destructive sm:col-span-2" role="alert">{consent ? c.form.errors.submit : c.form.errors.consent}</p>}
-      <Button type="submit" size="lg" disabled={status.kind === "loading"} className="sm:col-span-2 sm:justify-self-start">
-        {status.kind === "loading" ? c.form.submitting : c.form.submit}
-      </Button>
-    </form>
-  );
-}
-
-function FormField({ name, label, placeholder, type = "text", dir, required }: { name: string; label: string; placeholder: string; type?: string; dir?: "ltr" | "rtl"; required?: boolean }) {
-  return <div className="grid gap-2"><Label htmlFor={name}>{label}</Label><Input id={name} name={name} type={type} placeholder={placeholder} dir={dir} required={required} /></div>;
-}
-
-function SelectField({ name, label, placeholder, options, required }: { name: string; label: string; placeholder: string; options: { key: string; label: string }[]; required?: boolean }) {
-  return (
-    <div className="grid gap-2">
-      <Label htmlFor={name}>{label}</Label>
-      <div className="relative">
-        <select id={name} name={name} required={required} defaultValue="" className="h-10 w-full appearance-none rounded-md border border-input bg-background px-3 pe-10 text-sm text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
-          <option value="" disabled>{placeholder}</option>
-          {options.map((option) => <option key={option.key} value={option.key}>{option.label}</option>)}
-        </select>
-        <ChevronDown className="pointer-events-none absolute end-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-      </div>
-    </div>
-  );
 }
