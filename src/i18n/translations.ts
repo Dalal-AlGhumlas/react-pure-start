@@ -199,8 +199,7 @@ const ar = {
     },
     programs: {
       waqeah: "برنامج واقعة",
-      clubPrograms: "برامج نادي القانون",
-      general: "شراكة عامة مع النادي",
+      clubPrograms: "تدريب",
       other: "أخرى",
     },
     budgets: {
