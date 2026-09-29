@@ -336,6 +336,7 @@ function PublicWebsite() {
         <div className="section-shell mt-12 flex flex-col gap-3 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/50 sm:flex-row sm:items-center sm:justify-between">
           <span>{c.footer.copyright}</span>
           <span>{locale === "ar" ? "الموقع الرسمي للشراكات والرعاية" : "Official partnerships and sponsorships website"}</span>
+          <a href="/admin" className="hover:text-primary-foreground">{c.footer.adminLink}</a>
         </div>
       </footer>
     </div>
