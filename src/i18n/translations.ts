@@ -327,7 +327,7 @@ const ar = {
   },
 };
 
-const en: typeof ar = {
+const en: WidenContent<typeof ar> = {
   meta: {
     title: "Law Club | King Saud University | Partnerships & Sponsorships",
     description:
