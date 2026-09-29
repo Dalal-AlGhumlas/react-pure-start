@@ -514,15 +514,14 @@ function PublicWebsite() {
 
 function BrandMark({ large = false }: { large?: boolean }) {
   return (
-    <div
+    <img
+      src="/logos/law-club-logo.png"
+      alt="شعار نادي القانون بجامعة الملك سعود"
       className={cn(
-        "grid shrink-0 place-items-center border border-current text-current",
-        large ? "size-24" : "size-11",
+        "shrink-0 object-contain",
+        large ? "h-24 w-24" : "h-12 w-12",
       )}
-      aria-hidden="true"
-    >
-      <Scale className={large ? "size-11" : "size-5"} />
-    </div>
+    />
   );
 }
 
