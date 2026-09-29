@@ -197,12 +197,11 @@ const ar = {
       logistics: "دعم لوجستي",
       other: "أخرى",
     },
-    programs: {
-      waqeah: "برنامج واقعة",
-      clubPrograms: "برامج نادي القانون",
-      general: "شراكة عامة مع النادي",
-      other: "أخرى",
-    },
+programs: {
+  waqeah: "برنامج واقعة",
+  clubPrograms: "تدريب",
+  other: "أخرى",
+},
     budgets: {
       under5k: "أقل من 5,000 ريال",
       "5to10k": "5,000 – 10,000 ريال",
@@ -676,7 +675,11 @@ export const PARTNERSHIP_TYPE_KEYS = [
   "other",
 ] as const;
 
-export const PROGRAM_KEYS = ["waqeah", "clubPrograms", "general", "other"] as const;
+export const PROGRAM_KEYS = [
+  "waqeah",
+  "clubPrograms",
+  "other",
+] as const;
 
 export const BUDGET_KEYS = [
   "under5k",
