@@ -18,7 +18,23 @@ type Status = Database["public"]["Enums"]["request_status"];
 type AdminResult = Awaited<ReturnType<typeof listSponsorshipRequests>>;
 
 export const Route = createFileRoute("/admin")({
-  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
+  head: () => ({
+    meta: [
+      { title: "لوحة إدارة الطلبات | نادي القانون" },
+      {
+        name: "description",
+        content: "لوحة داخلية لمسؤولي نادي القانون لإدارة طلبات الرعاية والشراكة.",
+      },
+      { property: "og:title", content: "لوحة إدارة الطلبات | نادي القانون" },
+      {
+        property: "og:description",
+        content: "لوحة داخلية لمسؤولي نادي القانون لإدارة طلبات الرعاية والشراكة.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: AdminPage,
 });
 

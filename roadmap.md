@@ -1,11 +1,11 @@
-# Law Club sponsorship website
+# Public website
 
-- [x] Existing bilingual, anchor-navigated public website preserved
-- [x] Owner-confirmed contact email displayed
-- [x] Shared client/server form validation with localized field messages
-- [x] Stable submission success/reference handling
-- [x] Protected admin sign-in, summary, request list/details and status changes
-- [ ] Connect and verify the intended live Supabase project (private host configuration needed)
-- [ ] Provision the approved administrator
-- [ ] Supply licensed HT Baybars font, approved club/partner logos
-- [ ] Finish live acceptance checks documented in docs/SETUP.md
+- [x] Establish bilingual public shell and navigation
+- [x] Build all requested public content sections from existing translations
+- [x] Connect the public sponsorship form to the existing submission function
+- [x] Verify desktop and mobile presentation
+- [ ] Verify the existing Cloud project and server configuration — blocked: no connected project or required environment variables
+- [ ] Test valid sponsorship submission and reference-number generation — blocked: Cloud connection unavailable
+- [x] Test bilingual invalid-form validation
+- [ ] Verify admin authentication, request list, and status updates — authorization tests pass; live checks blocked by Cloud connection
+- [x] Confirm RTL/LTR, responsive overflow, contact email, footer spacing, and font/logo assets
