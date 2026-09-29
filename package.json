@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "check:supabase": "node scripts/check-supabase.mjs"
+    "check:supabase": "node scripts/check-supabase.mjs",
+    "test:browser": "node tests/browser.mjs"
   },
   "overrides": {
     "rolldown": "1.2.1"
@@ -88,6 +89,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
     "nitro": "3.0.260603-beta",
+    "playwright": "1.62.1",
     "postgres": "^3.4.9",
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
