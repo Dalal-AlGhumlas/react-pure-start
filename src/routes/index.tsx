@@ -324,60 +324,6 @@ function PublicWebsite() {
   </div>
 </RevealSection>
 
-<RevealSection id="partners" className="bg-background py-24 sm:py-28">
-  <div className="section-shell">
-    <SectionHeading
-      title={c.partners.heading}
-      subtitle={c.partners.subheading}
-      index="04"
-      centered
-    />
-  </div>
-
-  <div className="partners-marquee mt-12">
-    <div className="partners-track">
-      {[
-        "/logos/partners/alkhorayef.png",
-        "/logos/partners/alrefaei-co.png",
-        "/logos/partners/alrowaished-arazeen.png",
-        "/logos/partners/alshareef-partners.png",
-        "/logos/partners/city-law-firm.png",
-        "/logos/partners/clifford-chance.png",
-        "/logos/partners/human-rights-commission.png",
-        "/logos/partners/khoshaim-associates.png",
-        "/logos/partners/metropolis.png",
-        "/logos/partners/misk.png",
-        "/logos/partners/national-center-911.png",
-        "/logos/partners/rcu.png",
-        "/logos/partners/saudi-bar-association.png",
-        "/logos/partners/shora.png",
-        "/logos/partners/sidf.png",
-      ]
-        .concat([
-          "/logos/partners/alkhorayef.png",
-          "/logos/partners/alrefaei-co.png",
-          "/logos/partners/alrowaished-arazeen.png",
-          "/logos/partners/alshareef-partners.png",
-          "/logos/partners/city-law-firm.png",
-          "/logos/partners/clifford-chance.png",
-          "/logos/partners/human-rights-commission.png",
-          "/logos/partners/khoshaim-associates.png",
-          "/logos/partners/metropolis.png",
-          "/logos/partners/misk.png",
-          "/logos/partners/national-center-911.png",
-          "/logos/partners/rcu.png",
-          "/logos/partners/saudi-bar-association.png",
-          "/logos/partners/shora.png",
-          "/logos/partners/sidf.png",
-        ])
-        .map((logo, index) => (
-          <div key={`${logo}-${index}`} className="partner-logo">
-            <img src={logo} alt="" loading="lazy" />
-          </div>
-        ))}
-    </div>
-  </div>
-</RevealSection>
 
         <RevealSection id="benefits" className="bg-surface py-24 sm:py-32">
           <div className="section-shell">
