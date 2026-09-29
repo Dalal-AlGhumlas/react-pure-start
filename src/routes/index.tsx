@@ -259,35 +259,70 @@ function PublicWebsite() {
           </div>
         </RevealSection>
 
-        <RevealSection id="programs" className="bg-surface py-24 sm:py-32">
-          <div className="section-shell">
-            <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
-              <SectionHeading
-                title={c.program.heading}
-                subtitle={c.program.subheading}
-                eyebrow={c.program.eyebrow}
-                index="03"
-              />
-              <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
-                {c.program.cards.map((card, index) => {
-                  const Icon = programIcons[index];
-                  return (
-                    <article key={card.title} className="bg-background p-7 sm:p-8">
-                      <div className="flex items-center justify-between">
-                        {Icon && <Icon className="text-accent" />}
-                        <span className="text-xs font-semibold text-muted-foreground">
-                          0{index + 1}
-                        </span>
-                      </div>
-                      <h3 className="mt-12 text-xl font-semibold text-primary">{card.title}</h3>
-                      <p className="mt-4 text-sm leading-7 text-muted-foreground">{card.body}</p>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
+<RevealSection id="partners" className="bg-background py-16 sm:py-20">
+  <div className="section-shell">
+    <SectionHeading
+      title={c.partners.heading}
+      subtitle={c.partners.subheading}
+      index="04"
+      centered
+    />
+  </div>
+
+  <div className="partners-marquee mt-10">
+    <div className="partners-track">
+      {/* المجموعة الأولى */}
+      <div className="partners-group">
+        {[
+          "/logos/partners/alkhorayef.png",
+          "/logos/partners/alrefaei-co.png",
+          "/logos/partners/alrowaished-arazeen.png",
+          "/logos/partners/alshareef-partners.png",
+          "/logos/partners/city-law-firm.png",
+          "/logos/partners/clifford-chance.png",
+          "/logos/partners/human-rights-commission.png",
+          "/logos/partners/khoshaim-associates.png",
+          "/logos/partners/metropolis.png",
+          "/logos/partners/misk.png",
+          "/logos/partners/national-center-911.png",
+          "/logos/partners/rcu.png",
+          "/logos/partners/saudi-bar-association.png",
+          "/logos/partners/shora.png",
+          "/logos/partners/sidf.png",
+        ].map((logo) => (
+          <div key={logo} className="partner-logo">
+            <img src={logo} alt="" />
           </div>
-        </RevealSection>
+        ))}
+      </div>
+
+      {/* نسخة ثانية عشان يصير Loop بدون فراغ */}
+      <div className="partners-group" aria-hidden="true">
+        {[
+          "/logos/partners/alkhorayef.png",
+          "/logos/partners/alrefaei-co.png",
+          "/logos/partners/alrowaished-arazeen.png",
+          "/logos/partners/alshareef-partners.png",
+          "/logos/partners/city-law-firm.png",
+          "/logos/partners/clifford-chance.png",
+          "/logos/partners/human-rights-commission.png",
+          "/logos/partners/khoshaim-associates.png",
+          "/logos/partners/metropolis.png",
+          "/logos/partners/misk.png",
+          "/logos/partners/national-center-911.png",
+          "/logos/partners/rcu.png",
+          "/logos/partners/saudi-bar-association.png",
+          "/logos/partners/shora.png",
+          "/logos/partners/sidf.png",
+        ].map((logo) => (
+          <div key={`copy-${logo}`} className="partner-logo">
+            <img src={logo} alt="" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</RevealSection>
 
 <RevealSection id="partners" className="bg-background py-24 sm:py-28">
   <div className="section-shell">
