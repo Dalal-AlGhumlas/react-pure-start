@@ -1,0 +1,1 @@
+Place the licensed HT Baybars webfont here as `HTBaybars.woff2` (preferred) and/or `HTBaybars.woff`, then restart/rebuild the app. Vite includes only existing files in the CSS font sources. No font asset was supplied for the audit; the existing IBM Plex Sans Arabic fallback is temporary.

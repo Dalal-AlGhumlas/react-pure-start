@@ -10,12 +10,10 @@
  * All colors are oklch design tokens. Never hardcode colors in components.
  */
 
-/* Arabic display font placeholder — drop HTBaybars.woff2 / .woff into public/fonts/ later. */
+/* Vite adds URL sources only when the licensed font asset is present. */
 @font-face {
   font-family: "HT Baybars";
-  src:
-    url("/fonts/HTBaybars.woff2") format("woff2"),
-    url("/fonts/HTBaybars.woff") format("woff");
+  src: local("HT Baybars");
   font-weight: 400 700;
   font-display: swap;
 }
@@ -73,8 +71,12 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --shadow-card: 0 1px 2px oklch(0.2427 0.1563 270.89 / 0.04), 0 12px 32px -18px oklch(0.2427 0.1563 270.89 / 0.18);
-  --shadow-elevated: 0 2px 4px oklch(0.2427 0.1563 270.89 / 0.05), 0 28px 60px -28px oklch(0.2427 0.1563 270.89 / 0.28);
+  --shadow-card:
+    0 1px 2px oklch(0.2427 0.1563 270.89 / 0.04),
+    0 12px 32px -18px oklch(0.2427 0.1563 270.89 / 0.18);
+  --shadow-elevated:
+    0 2px 4px oklch(0.2427 0.1563 270.89 / 0.05),
+    0 28px 60px -28px oklch(0.2427 0.1563 270.89 / 0.28);
   --shadow-ring-accent: 0 0 0 1px oklch(0.8162 0.0608 234.84 / 0.6);
 }
 
@@ -168,7 +170,6 @@ html[lang="ar"] {
     color: var(--color-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
 
   h1,

@@ -27,9 +27,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("ar");
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "en" || stored === "ar") {
-      setLocaleState(stored);
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored === "en" || stored === "ar") setLocaleState(stored);
+    } catch {
+      /* Language switching still works when storage is blocked. */
     }
   }, []);
 
@@ -37,11 +39,21 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     root.setAttribute("lang", locale);
     root.setAttribute("dir", locale === "ar" ? "rtl" : "ltr");
+    const meta = translations[locale].meta;
+    const admin = window.location.pathname.startsWith("/admin");
+    document.title = admin ? meta.adminTitle : meta.title;
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", admin ? meta.adminDescription : meta.description);
   }, [locale]);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
-    window.localStorage.setItem(STORAGE_KEY, next);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      /* Storage may be blocked. */
+    }
   }, []);
 
   const value = useMemo<I18nValue>(
