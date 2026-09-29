@@ -520,12 +520,11 @@ const en: WidenContent<typeof ar> = {
       logistics: "Logistical Support",
       other: "Other",
     },
-    programs: {
-      waqeah: "Waqeah Program",
-      clubPrograms: "Law Club Programs",
-      general: "General Partnership with the Club",
-      other: "Other",
-    },
+programs: {
+  waqeah: "Waqeah Program",
+  clubPrograms: "Training",
+  other: "Other",
+},
     budgets: {
       under5k: "Less than SAR 5,000",
       "5to10k": "SAR 5,000 – 10,000",
