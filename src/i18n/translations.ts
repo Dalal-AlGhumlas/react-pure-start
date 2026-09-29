@@ -2,6 +2,14 @@ export type Locale = "ar" | "en";
 
 export const LOCALES: Locale[] = ["ar", "en"];
 
+type WidenContent<T> = T extends string
+  ? string
+  : T extends readonly (infer U)[]
+    ? readonly WidenContent<U>[]
+    : T extends object
+      ? { [K in keyof T]: WidenContent<T[K]> }
+      : T;
+
 const ar = {
   meta: {
     title: "نادي القانون | جامعة الملك سعود | الشراكات والرعاية",
@@ -656,7 +664,7 @@ const en: typeof ar = {
 };
 
 export const translations = { ar, en } as const;
-export type Content = typeof ar;
+export type Content = WidenContent<typeof ar>;
 
 export const PARTNERSHIP_TYPE_KEYS = [
   "financial",
