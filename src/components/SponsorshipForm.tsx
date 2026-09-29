@@ -325,9 +325,9 @@ function SelectField({
           aria-describedby={error ? `${name}-error` : undefined}
           className="h-10 w-full min-w-0 appearance-none rounded-md border border-input bg-background px-3 pe-10 text-sm text-foreground focus-visible:ring-1 focus-visible:ring-ring"
         >
-          <option value="" disabled={required}>
-            {placeholder}
-          </option>
+<option value="" hidden>
+  {placeholder}
+</option>
           {options.map((option) => (
             <option key={option.key} value={option.key}>
               {option.label}
