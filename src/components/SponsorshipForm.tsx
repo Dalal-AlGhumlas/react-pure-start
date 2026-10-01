@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useI18n } from "@/i18n/LanguageProvider";
-import { BUDGET_KEYS, PARTNERSHIP_TYPE_KEYS, PROGRAM_KEYS } from "@/i18n/translations";
+import { BUDGET_KEYS, PROGRAM_KEYS } from "@/i18n/translations";
 import { submitSponsorshipRequest } from "@/lib/sponsorship.functions";
 import {
   fieldErrorKeys,
@@ -182,15 +182,6 @@ export function SponsorshipForm() {
           maxLength={200}
           type="url"
           dir="ltr"
-        />
-        <SelectField
-          {...fieldProps("partnershipType")}
-          {...c.form.fields.partnershipType}
-          options={PARTNERSHIP_TYPE_KEYS.map((key) => ({
-            key,
-            label: c.form.partnershipTypes[key],
-          }))}
-          required
         />
         <SelectField
           {...fieldProps("programInterest")}
