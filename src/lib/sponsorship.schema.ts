@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { BUDGET_KEYS, PARTNERSHIP_TYPE_KEYS, PROGRAM_KEYS } from "../i18n/translations.ts";
+import { BUDGET_KEYS, PROGRAM_KEYS } from "../i18n/translations.ts";
 
 export function normalizeSaudiPhone(value: string) {
   return value
@@ -50,9 +50,6 @@ export const submissionSchema = z.object({
         return false;
       }
     }, "website"),
-  partnershipType: z.enum(PARTNERSHIP_TYPE_KEYS, {
-    errorMap: () => ({ message: "partnershipType" }),
-  }),
   programInterest: optionalChoice([...PROGRAM_KEYS], "programInterest"),
   estimatedBudget: optionalChoice([...BUDGET_KEYS], "estimatedBudget"),
   message: z.string().trim().max(4000, "message").optional(),
@@ -69,7 +66,6 @@ export const fieldErrorKeys = {
   phone: "phone",
   email: "email",
   website: "website",
-  partnershipType: "partnershipType",
   programInterest: "programInterest",
   estimatedBudget: "estimatedBudget",
   message: "message",
