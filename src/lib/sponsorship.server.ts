@@ -25,7 +25,6 @@ export async function saveSponsorshipRequest(
         phone: data.phone,
         email: data.email,
         website: data.website ?? null,
-        partnership_type: data.partnershipType,
         program_interest: data.programInterest ?? null,
         estimated_budget: data.estimatedBudget ?? null,
         message: data.message || null,
