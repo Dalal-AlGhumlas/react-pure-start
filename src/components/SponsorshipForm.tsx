@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useI18n } from "@/i18n/LanguageProvider";
-import { BUDGET_KEYS, PROGRAM_KEYS } from "@/i18n/translations";
+import { PROGRAM_KEYS } from "@/i18n/translations";
 import { submitSponsorshipRequest } from "@/lib/sponsorship.functions";
 import {
   fieldErrorKeys,
