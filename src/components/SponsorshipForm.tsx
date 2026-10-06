@@ -151,13 +151,6 @@ export function SponsorshipForm() {
           required
         />
         <FormField
-          {...fieldProps("jobTitle")}
-          {...c.form.fields.jobTitle}
-          autoComplete="organization-title"
-          maxLength={120}
-          required
-        />
-        <FormField
           {...fieldProps("phone")}
           {...c.form.fields.phone}
           autoComplete="tel"
@@ -166,32 +159,10 @@ export function SponsorshipForm() {
           dir="ltr"
           required
         />
-        <FormField
-          {...fieldProps("email")}
-          {...c.form.fields.email}
-          autoComplete="email"
-          maxLength={180}
-          type="email"
-          dir="ltr"
-          required
-        />
-        <FormField
-          {...fieldProps("website")}
-          {...c.form.fields.website}
-          autoComplete="url"
-          maxLength={200}
-          type="url"
-          dir="ltr"
-        />
         <SelectField
           {...fieldProps("programInterest")}
           {...c.form.fields.programInterest}
           options={PROGRAM_KEYS.map((key) => ({ key, label: c.form.programs[key] }))}
-        />
-        <SelectField
-          {...fieldProps("estimatedBudget")}
-          {...c.form.fields.budget}
-          options={BUDGET_KEYS.map((key) => ({ key, label: c.form.budgets[key] }))}
         />
         <div className="grid min-w-0 gap-2 sm:col-span-2">
           <Label htmlFor="message">
