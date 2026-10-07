@@ -33,13 +33,13 @@ export type Database = {
         Row: {
           company_name: string
           created_at: string
-          email: string
+          email: string | null
           estimated_budget: string | null
           full_name: string
           id: string
-          job_title: string
+          job_title: string | null
           message: string | null
-          partnership_type: string
+          partnership_type: string | null
           phone: string
           program_interest: string | null
           reference_number: string
@@ -50,13 +50,13 @@ export type Database = {
         Insert: {
           company_name: string
           created_at?: string
-          email: string
+          email?: string | null
           estimated_budget?: string | null
           full_name: string
           id?: string
-          job_title: string
+          job_title?: string | null
           message?: string | null
-          partnership_type: string
+          partnership_type?: string | null
           phone: string
           program_interest?: string | null
           reference_number: string
@@ -67,13 +67,13 @@ export type Database = {
         Update: {
           company_name?: string
           created_at?: string
-          email?: string
+          email?: string | null
           estimated_budget?: string | null
           full_name?: string
           id?: string
-          job_title?: string
+          job_title?: string | null
           message?: string | null
-          partnership_type?: string
+          partnership_type?: string | null
           phone?: string
           program_interest?: string | null
           reference_number?: string
