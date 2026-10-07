@@ -17,18 +17,19 @@ export async function saveSponsorshipRequest(
   try {
     const { data: row, error } = await getClient()
       .from("sponsorship_requests")
-      .insert({
-        reference_number: "",
-        full_name: data.fullName,
-        company_name: data.companyName,
-        job_title: data.jobTitle,
-        phone: data.phone,
-        email: data.email,
-        website: data.website ?? null,
-        program_interest: data.programInterest ?? null,
-        estimated_budget: data.estimatedBudget ?? null,
-        message: data.message || null,
-      })
+.insert({
+  reference_number: "",
+  full_name: data.fullName,
+  company_name: data.companyName,
+  job_title: null,
+  phone: data.phone,
+  email: null,
+  website: null,
+  partnership_type: null,
+  program_interest: data.programInterest ?? null,
+  estimated_budget: null,
+  message: data.message || null,
+})
       .select("reference_number")
       .single();
     if (error || !row?.reference_number) {
