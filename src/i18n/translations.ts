@@ -198,8 +198,8 @@ const ar = {
       other: "أخرى",
     },
 programs: {
-  waqeah: "برنامج واقعة",
-  clubPrograms: "تدريب",
+  waqeah: "ورش عمل",
+  clubPrograms: "مقاعد تدريبية",
   other: "أخرى",
 },
     budgets: {
@@ -521,8 +521,8 @@ const en: WidenContent<typeof ar> = {
       other: "Other",
     },
 programs: {
-  waqeah: "Waqeah Program",
-  clubPrograms: "Training",
+  waqeah: "Workshops",
+  clubPrograms: "Training Seats",
   other: "Other",
 },
     budgets: {
