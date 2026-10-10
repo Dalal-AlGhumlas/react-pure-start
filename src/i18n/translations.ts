@@ -677,7 +677,6 @@ export const PARTNERSHIP_TYPE_KEYS = [
 export const PROGRAM_KEYS = [
   "waqeah",
   "clubPrograms",
-  "other",
 ] as const;
 
 export const BUDGET_KEYS = [
